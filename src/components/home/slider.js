@@ -45,7 +45,7 @@ videoData.map((item, k)=>{
 
     return <div className='h-screen object-cover ' key={k}>
 
-<video width="100%"  controls autoPlay muted loop>
+<video width="100%" className=' aspect-video'  controls autoPlay muted loop>
 <source src={item} type="video/mp4"/>
   <source src={item} type="video/ogg"/>
    Your browser does not support the video tag.

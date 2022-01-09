@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import logo from '../images/Jewelleryshow_Logo.png'
 export default function Navbar() {
+
+  const navref = useRef()
 
     const navData = [
 
@@ -62,9 +64,14 @@ export default function Navbar() {
       ]
   
 
+      useEffect(()=>{
+
+        
+
+      }, [])
 
     return (
-        <nav className='p-2  flex items-center bg-[rgba(0,0,0,0.1)] justify-around absolute top-0 w-full left-0 z-20'>
+        <nav ref={navref} className='p-2  flex items-center bg-[rgba(0,0,0,0.1)] justify-around absolute top-0 w-full left-0 z-20'>
 
 <Link href='/'>
 <Image src={logo} width={80} height={60}/>
@@ -76,7 +83,7 @@ export default function Navbar() {
 
         return <li  key={i}>
             <Link href={item.path} >
-            <h1 className='text-xl text-white'>{item.title}</h1>
+            <h1 className='text-lg text-white'>{item.title}</h1>
            
         </Link>
  </li>
